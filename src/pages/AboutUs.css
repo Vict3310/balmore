@@ -1,0 +1,88 @@
+.about-page {
+  padding: 0;
+  /* Removing padding so hero goes edge to edge */
+}
+
+.about-hero {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.about-hero-overlay h2 {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: normal;
+  margin: 0;
+}
+
+.about-content {
+  display: flex;
+  padding: 4rem;
+  background: #fff;
+  color: #000 !important;
+}
+
+.about-content-left {
+  width: 30%;
+}
+
+.about-content-left h3 {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000 !important;
+}
+
+.about-content-right {
+  width: 70%;
+  max-width: 800px;
+}
+
+.about-content-right p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #000 !important;
+}
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+  }
+
+  .about-hero-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    padding: 2rem 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .about-content-left {
+    width: 100%;
+  }
+
+  .about-content-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-content-right p {
+    font-size: 0.95rem;
+  }
+}

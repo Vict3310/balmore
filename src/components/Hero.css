@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+.hero {
+    background-image: url(../assets/landingimg.jpg);
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    /* height: 20vh; */
+    padding-top: 89vh;
+}
+
+.hero-footer-left {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+.hero-footer-left h1 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    line-height: 1;
+}
+
+.hero-footer-left h1 sup {
+    font-size: 1.5rem;
+    font-weight: bold;
+    vertical-align: super;
+}
+
+.hero-footer-left .shop-now {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: underline;
+}
+
+.hero-footer-right {
+    width: 30rem;
+    font-size: .8rem;
+
+}
+
+.hero-footer-right p {
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+/* ─── MOBILE HERO ─── */
+@media (max-width: 768px) {
+    .hero {
+        background-position: center;
+        background-image: url(../assets/mobileland.jpg);
+    }
+
+    .hero-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 55vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 24px;
+        gap: 12px;
+    }
+
+    .hero-footer-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .hero-footer-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-footer-left h1 sup {
+        font-size: 1rem;
+    }
+
+    .hero-footer-left .shop-now {
+        font-size: 1rem;
+    }
+
+    .hero-footer-right {
+        width: 100%;
+    }
+
+    .hero-footer-right p {
+        font-size: 0.8rem;
+        font-weight: normal;
+        opacity: 0.75;
+    }
+}

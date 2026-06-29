@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    color: white;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-bottom {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.shop-left {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: .2rem .2rem;
+}
+
+.shop-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.shop-left .des {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.shop-left .des h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* 
+.shop-left .des .des-left {
+    width: ;
+} */
+
+
+.shop-left .des .des-right {
+    margin-bottom: 1rem;
+    width: 30rem;
+
+}
+
+.shop-left .des .des-right h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.shop-left .des .des-right p {
+    font-size: .8rem;
+}
+
+.shop-left .des .des-right:last-child {
+    margin-bottom: 0;
+}
+
+.shop-left .des .des-btn {
+    margin-top: 1rem;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.shop-right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.shopright1 {
+    margin: .2rem .2rem;
+    width: 50%;
+    background-color: rgb(221, 220, 220);
+}
+
+.shopleft1 {
+    margin: .2rem .2rem;
+    background-color: rgb(221, 220, 220);
+    width: 50%;
+}
+
+.img-wrap {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ─── RIGHT-SIDE PRODUCT INFO (below image) ─── */
+.shopright1-des,
+.shopleft1-des {
+    padding: 0.6rem 0.5rem;
+}
+
+.shopright1-des h3,
+.shopleft1-des h3 {
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #000;
+    margin-bottom: 0.2rem;
+}
+
+.shopright1-des p {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* ─── COLOR SWATCHES ─── */
+.color-swatches {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.swatch {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    transition: border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swatch.active {
+    border-color: #333;
+}
+
+@media (hover: hover) {
+    .swatch:hover {
+        border-color: #555;
+    }
+}
+
+.swatch-dot {
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    opacity: 0.85;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.swatch.active .swatch-dot {
+    opacity: 1;
+}
+
+/* ─── SHOP BOTTOM ─── */
+.shop-bottom-left {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: .2rem;
+    align-self: flex-start;
+}
+
+.shop-bottom-right {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: .2rem .2rem;
+    height: 100%;
+}
+
+.shop-bottom-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shop-bottom-right .des {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.shop-bottom-right .des .des-right {
+    margin-bottom: 1rem;
+    width: 30rem;
+}
+
+.shop-bottom-right .des h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shop-bottom-right .des .des-right h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.shop-bottom-right .des .des-right p {
+    font-size: .8rem;
+}
+
+.shop-bottom-right .des .des-right:last-child {
+    margin-bottom: 0;
+}
+
+.shop-bottom-right .des .des-btn {
+    margin-top: 1rem;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* ─── SHOP GRID 4×2 ─── */
+.shop-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .2rem;
+    padding: .2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.shopgrid-heading {
+    width: 100%;
+}
+
+.shopgrid-heading h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #000;
+}
+
+.shopgrid {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(221, 220, 220);
+    flex: 0 0 calc(25% - .2rem);
+}
+
+.shopgrid .img-wrap {
+    width: 100%;
+    height: 0;
+    padding-bottom: 120%;
+    position: relative;
+}
+
+.shopgrid .img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.shopgrid-des {
+    padding: 0.5rem 0.4rem;
+}
+
+.shopgrid-des h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 0.3rem;
+    color: #000;
+}
+
+.shopgrid-des p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.shopgrid .color-swatches .swatch {
+    color: #000;
+}
+
+.shopgrid .color-swatches .swatch-dot {
+    color: #000;
+}
+
+.shopgrid .swatch {
+    width: 1rem;
+    height: 1rem;
+}
+
+.shopgrid .swatch-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+/* ─── VIDEO & OVERLAY SECTION (shared with shop-left) ─── */
+.shop-video-section {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.shop-video-left {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-video-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Shared overlay text styles for shop-left, shop-video-left */
+.shop-left .des,
+.shop-video-left .des {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.shop-left .des h1,
+.shop-video-left .des h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shop-left .des .des-right,
+.shop-video-left .des .des-right {
+    margin-bottom: 1rem;
+    width: 30rem;
+}
+
+.shop-left .des .des-right h3,
+.shop-video-left .des .des-right h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.shop-left .des .des-right p,
+.shop-video-left .des .des-right p {
+    font-size: .8rem;
+}
+
+.shop-left .des .des-btn,
+.shop-video-left .des .des-btn {
+    margin-top: 1rem;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.shop-video-right {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-video-right video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ─── SHOP FOOTER 4-COLUMN ─── */
+.shop-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.shop-footer-card {
+    flex: 1;
+    min-width: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-footer-card .img-wrap {
+    width: 100%;
+    height: 0;
+    padding-bottom: 125%;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(221, 220, 220);
+    margin: 1rem 0;
+}
+
+.shop-footer-card .img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+@media (hover: hover) {
+    .shop-footer-card:hover .img-wrap img {
+        transform: scale(1.08);
+    }
+}
+
+.shop-footer-card h2.card-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #000 !important;
+    margin: 0;
+}
+
+.shop-footer-card p.card-desc {
+    font-size: .85rem;
+    color: #333 !important;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVENESS  ≤768px
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* ── Shop Top: stack left/right panels ── */
+    .shop-top {
+        flex-direction: column;
+    }
+
+    .shop-left {
+        width: 100%;
+        min-height: 70vh;
+    }
+
+    .shop-left .des {
+        flex-direction: column;
+        padding: 1.2rem;
+    }
+
+    .shop-left .des h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .shop-left .des .des-right {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .shop-left .des .des-right h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .shop-right {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .shopright1,
+    .shopleft1 {
+        width: 50%;
+    }
+
+    /* ── Shop Bottom: stack ── */
+    .shop-bottom {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .shop-bottom-left {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .shop-bottom-right {
+        width: 100%;
+        min-height: 70vw;
+        padding: 0.2rem;
+    }
+
+    .shop-bottom-right .des {
+        flex-direction: column;
+        padding: 1.2rem;
+    }
+
+    .shop-bottom-right .des h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .shop-bottom-right .des .des-right {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    /* ── Shop Grid: 2 columns on mobile ── */
+    .shopgrid {
+        flex: 0 0 calc(50% - 0.2rem);
+    }
+
+    /* ── Video Section: stack ── */
+    .shop-video-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .shop-video-left {
+        width: 100%;
+        min-height: 70vw;
+    }
+
+    .shop-video-left .des {
+        flex-direction: column;
+        padding: 1.2rem;
+    }
+
+    .shop-video-left .des h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .shop-video-left .des .des-right {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .shop-video-right {
+        width: 100%;
+        height: 70vw;
+    }
+
+    /* ── Shop Footer: horizontal swipe carousel on mobile ── */
+    .shop-footer {
+        flex-wrap: nowrap;
+        /* single row, no wrapping */
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 1.2rem 1.2rem 1.5rem;
+        gap: 0.75rem;
+        /* hide scrollbar */
+        scrollbar-width: none;
+        margin: .4rem;
+    }
+
+    .shop-footer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .shop-footer-card {
+        flex: 0 0 75vw;
+        /* 1 full card + peek of next */
+        min-width: 0;
+        scroll-snap-align: start;
+    }
+
+    .shop-footer-card h2.card-title {
+        font-size: 1.1rem;
+    }
+
+    .shop-footer-card p.card-desc {
+        font-size: 0.78rem;
+    }
+}
