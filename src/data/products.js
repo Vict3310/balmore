@@ -1,0 +1,68 @@
+const images = import.meta.glob('../assets/*.{webp,jpg,png}', { eager: true, import: 'default' })
+const F = (file) => images[`../assets/${file}`] || ''
+
+export const globalProducts = [
+    // Pullovers
+    { category: 'Pullovers', img: F('ls1.webp'),  title: 'Stadium Crewneck',   price: '$165.00 USD' },
+    { category: 'Pullovers', img: F('ls2.webp'),  title: 'Stadium Crewneck',   price: '$165.00 USD' },
+    { category: 'Pullovers', img: F('ls3.webp'),  title: 'Stadium Crewneck',   price: '$165.00 USD' },
+    { category: 'Pullovers', img: F('ls4.webp'),  title: 'Heritage Hoodie',    price: '$165.00 USD' },
+    { category: 'Pullovers', img: F('ls5.webp'),  title: 'Heritage Hoodie',    price: '$165.00 USD' },
+    // Longsleeves
+    { category: 'Longsleeves', img: F('ls6.webp'), title: 'Oakwood Longsleeve', price: '$140.00 USD' },
+    { category: 'Longsleeves', img: F('ls7.webp'), title: 'Oakwood Longsleeve', price: '$140.00 USD' },
+    { category: 'Longsleeves', img: F('ls8.webp'), title: 'Oakwood Longsleeve', price: '$140.00 USD' },
+    // T-Shirts (Performance)
+    { category: 'T-Shirts', img: F('tshirt1.webp'), title: 'Oakwood T-Shirt',    price: '$130.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt2.webp'), title: 'Oakwood T-Shirt',    price: '$130.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt3.webp'), title: 'Oakwood T-Shirt',    price: '$130.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt4.webp'), title: 'Lansdowne T-Shirt',  price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt5.webp'), title: 'Lansdowne T-Shirt',  price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt6.webp'), title: 'Lansdowne T-Shirt',  price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt7.webp'), title: 'Lansdowne T-Shirt',  price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt8.webp'), title: 'Plaza Ringer T-Shirt', price: '$110.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt9.webp'), title: 'Plaza Ringer T-Shirt', price: '$110.00 USD' },
+    { category: 'T-Shirts', img: F('tshirt10.webp'), title: 'Plaza Ringer T-Shirt', price: '$110.00 USD' },
+    { category: 'T-Shirts', img: F('shirt1.webp'), title: 'Oxford Cropped T-Shirt', price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('shirt2.webp'), title: 'Oxford Cropped T-Shirt', price: '$105.00 USD' },
+    { category: 'T-Shirts', img: F('shirt3.webp'), title: 'Sports & Games Cropped Ringer T-Shirt', price: '$110.00 USD' },
+    { category: 'T-Shirts', img: F('shirt4.webp'), title: 'Sports & Games Cropped Ringer T-Shirt', price: '$110.00 USD' },
+    { category: 'T-Shirts', img: F('shirt5.webp'), title: 'Sports & Games Cropped Ringer T-Shirt', price: '$110.00 USD' },
+    // Tank Tops
+    { category: 'Tank Tops', img: F('newtank1.webp'),   title: 'Hudson Muscle Tee',  price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank2.webp'),   title: 'Hudson Muscle Tee',  price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank3.webp'),   title: 'Oakwood Tank Top',   price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank4.webp'),   title: 'Oakwood Tank Top',   price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank5.webp'),   title: 'Oakwood Tank Top',   price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank6.webp'),   title: 'Track Club Tank Top', price: '$60.00 USD' },
+    { category: 'Tank Tops', img: F('newtank7.webp'),   title: 'Track Club Tank Top', price: '$60.00 USD' },
+    { category: 'Tank Tops', img: F('newtank8.webp'),   title: 'Track Club Tank Top', price: '$60.00 USD' },
+    { category: 'Tank Tops', img: F('newtank9.webp'),   title: 'Harland Tank Top',   price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank10.webp'),  title: 'Harland Tank Top', price: '$65.00 USD' },
+    { category: 'Tank Tops', img: F('newtank11.webp'),  title: 'Academy Cropped Tank Top', price: '$60.00 USD' },
+    { category: 'Tank Tops', img: F('newtank12.webp'),  title: 'Academy Cropped Tank Top', price: '$60.00 USD' },
+    // Cotton T-Shirts
+    { category: 'T-Shirts', img: F('shirt6.webp'),     title: 'Athleisure T-Shirt', price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt7.webp'),     title: 'Radius T-Shirt',     price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt8.webp'),     title: 'International T-Shirt', price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt6.1.webp'),   title: 'Gallery T-Shirt',    price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt7.1.webp'),   title: 'Harvest T-Shirt',    price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt8.1.webp'),   title: 'Marlowe T-Shirt',    price: '$75.00 USD' },
+    { category: 'T-Shirts', img: F('shirt4.1.webp'),   title: 'Stadium T-Shirt',    price: '$75.00 USD' },
+    // Aberdeen T-Shirt
+    { category: 'T-Shirts', img: F('shirt8.2.webp'),   title: 'Aberdeen T-Shirt',   price: '$65.00 USD' },
+    { category: 'T-Shirts', img: F('shirt8.3.webp'),   title: 'Aberdeen T-Shirt',   price: '$65.00 USD' },
+    { category: 'T-Shirts', img: F('shirt8.4.webp'),   title: 'Aberdeen T-Shirt',   price: '$65.00 USD' },
+    { category: 'T-Shirts', img: F('shirt6.2.webp'),   title: 'Aberdeen T-Shirt',   price: '$65.00 USD' },
+    // Headwear
+    { category: 'Headwear', img: F('capgreen.webp'),     title: 'Somerville 4-Panel Hat', price: '$65.00 USD' },
+    { category: 'Headwear', img: F('cappurple.webp'),    title: 'Somerville 4-Panel Hat', price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capred.webp'),       title: 'York 5-Panel Hat',       price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capwhite.webp'),     title: 'Belmore 4-Panel Hat',    price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capbrownnet.webp'),  title: 'Belmore 4-Panel Hat',    price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capnetblue.webp'),   title: 'Belmore 4-Panel Hat',    price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capgreen.webp'),     title: 'Aberdeen 6-Panel Hat',   price: '$65.00 USD' },
+    { category: 'Headwear', img: F('cappurple.webp'),    title: 'Aberdeen 6-Panel Hat',   price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capred.webp'),       title: 'Aberdeen 6-Panel Hat',   price: '$65.00 USD' },
+    { category: 'Headwear', img: F('capwhite.webp'),     title: 'Aberdeen 6-Panel Hat',   price: '$65.00 USD' },
+]

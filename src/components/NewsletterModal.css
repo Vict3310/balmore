@@ -1,0 +1,100 @@
+.newsletter-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.newsletter-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.newsletter-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+}
+
+.newsletter-modal .close-btn:hover {
+    color: #000;
+}
+
+.newsletter-content {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.newsletter-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.newsletter-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-content input {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.newsletter-content input:focus {
+    border-color: #000;
+}
+
+.newsletter-content button {
+    padding: 1rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.newsletter-content button:hover {
+    opacity: 0.8;
+}

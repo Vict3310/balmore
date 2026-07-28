@@ -1,0 +1,128 @@
+.tshirts-page {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* ── Hero ── */
+.tshirts-hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+.tshirts-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center top;
+}
+
+.tshirts-hero h1 {
+    position: relative;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 0.02em;
+    z-index: 1;
+}
+
+/* ── Section Headers ── */
+.tshirts-section {
+    padding: 60px 20px;
+}
+
+.tshirts-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.tshirts-section-header h2 {
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #000;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Product Grid ── */
+.tshirts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem
+}
+
+.tshirts-card {
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f8;
+}
+
+.tshirts-card-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.tshirts-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+@media (hover: hover) {
+    .tshirts-card:hover .tshirts-card-img img {
+        transform: scale(1.04);
+    }
+}
+
+.tshirts-card-des {
+    padding: 12px 8px;
+    background: #fff;
+}
+
+.tshirts-card-des h3 {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #000;
+    margin: 0 0 4px;
+}
+
+.tshirts-card-des p {
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .tshirts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tshirts-section {
+        padding: 40px 16px;
+    }
+
+    .tshirts-hero {
+        height: 50vh;
+        padding: 24px 16px;
+    }
+
+    .tshirts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+    }
+}

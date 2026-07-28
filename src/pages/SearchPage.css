@@ -1,0 +1,169 @@
+.search-page {
+    min-height: 100vh;
+    background: #fff;
+    padding-top: var(--navbar-height);
+}
+
+/* ── Persistent Search Bar ── */
+.sp-bar-wrapper {
+    border-bottom: 1px solid #eaeaea;
+    padding: 16px 40px;
+    background: #fff;
+    position: sticky;
+    top: var(--navbar-height);
+    z-index: 100;
+}
+
+.sp-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+}
+
+.sp-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    color: #000;
+    background: transparent;
+    font-family: inherit;
+}
+
+.sp-bar input::placeholder {
+    color: #aaa;
+}
+
+.sp-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sp-submit {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    color: #000;
+    font-family: inherit;
+}
+
+.sp-submit:hover {
+    opacity: 0.6;
+}
+
+.sp-clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* ── Content Area ── */
+.sp-content {
+    padding: 24px 40px 60px;
+}
+
+.sp-count {
+    font-size: 0.85rem;
+    color: #333;
+    margin-bottom: 24px;
+    text-transform: lowercase;
+}
+
+.sp-empty {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ── Product Grid ── */
+.sp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.sp-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-card-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.sp-card-img img,
+.sp-card-img .lazy-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.sp-card:hover .sp-card-img img {
+    transform: scale(1.04);
+}
+
+.sp-card-img .lazy-image {
+    transition: transform 0.5s ease;
+}
+
+.sp-card:hover .sp-card-img .lazy-image {
+    transform: scale(1.04);
+}
+
+.sp-card-info {
+    padding: 10px 6px;
+}
+
+.sp-card-info h3 {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #000;
+    margin: 0 0 4px;
+}
+
+.sp-card-info p {
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .sp-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sp-bar-wrapper {
+        padding: 12px 16px;
+        top: 52px;
+    }
+
+    .sp-content {
+        padding: 16px 16px 60px;
+    }
+
+    .sp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+    }
+
+    .sp-bar input {
+        font-size: 1rem;
+    }
+}

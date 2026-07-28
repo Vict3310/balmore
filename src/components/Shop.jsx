@@ -1,109 +1,140 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import capbig from '../assets/capbig.jpg'
 import './Shop.css'
-import capbrownnet from '../assets/capbrownnet.webp'
-import capred from '../assets/capred.webp'
-import capgreen from '../assets/capgreen.webp'
-import capnetblue from '../assets/capnetblue.webp'
-import cappurple from '../assets/cappurple.webp'
-import capwhite from '../assets/capwhite.webp'
 import shopbottombig from '../assets/shopbottombig.jpg'
-import shopbtop1 from '../assets/shopbtop1.webp'
-import shopbtop2 from '../assets/shopbtop2.webp'
-import shopbtop3 from '../assets/shopbtop3.webp'
-import hoodblue from '../assets/hoodblue.webp'
-import hoodbpurple from '../assets/hoodbpurple.webp'
-import hoodbwhite from '../assets/hoodbwhite.webp'
-import shirt1 from '../assets/shirt1.webp'
-import shirt2 from '../assets/shirt2.webp'
-import shirt3 from '../assets/shirt3.webp'
-import shirt4 from '../assets/shirt4.webp'
-import shirt4_1 from '../assets/shirt4.1.webp'
-import shirt5 from '../assets/shirt5.webp'
-import shirt6 from '../assets/shirt6.webp'
-import shirt6_1 from '../assets/shirt6.1.webp'
-import shirt6_2 from '../assets/shirt6.2.webp'
-import shirt7 from '../assets/shirt7.webp'
-import shirt7_1 from '../assets/shirt7.1.webp'
-import shirt7_2 from '../assets/shirt7.2.webp'
-import shirt8 from '../assets/shirt8.webp'
-import shirt8_1 from '../assets/shirt8.1.webp'
-import shirt8_2 from '../assets/shirt8.2.webp'
-import shirt8_3 from '../assets/shirt8.3.webp'
 import shipping from '../assets/shipping.webp'
 import contact from '../assets/contact.webp'
 import lookbook from '../assets/lookbook.webp'
 import press from '../assets/press.webp'
 import capstack from '../assets/capstack.jpg'
 
+// ── Helper to load clean assets ──
+import capgreen from '../assets/capgreen.webp'
+import cappurple from '../assets/cappurple.webp'
+import capred from '../assets/capred.webp'
+import capwhite from '../assets/capwhite.webp'
+import capbrownnet from '../assets/capbrownnet.webp'
+import capnetblue from '../assets/capnetblue.webp'
+
+import newtank3 from '../assets/newtank3.webp'
+import newtank4 from '../assets/newtank4.webp'
+import newtank5 from '../assets/newtank5.webp'
+
+import ls6 from '../assets/ls6.webp'
+import ls7 from '../assets/ls7.webp'
+import ls8 from '../assets/ls8.webp'
+
+import shirt6 from '../assets/shirt6.webp'
+import shirt6_1 from '../assets/shirt6.1.webp'
+import shirt7_1 from '../assets/shirt7.1.webp'
+import shirt7 from '../assets/shirt7.webp'
+import shirt1 from '../assets/shirt1.webp'
+
+import tshirt8 from '../assets/tshirt8.webp'
+import tshirt9 from '../assets/tshirt9.webp'
+import tshirt10 from '../assets/tshirt10.webp'
+
+import shirt3 from '../assets/shirt3.webp'
+import shirt4 from '../assets/shirt4.webp'
+import shirt5 from '../assets/shirt5.webp'
+
+import tshirt4 from '../assets/tshirt4.webp'
+import tshirt5 from '../assets/tshirt5.webp'
+import tshirt6 from '../assets/tshirt6.webp'
+import tshirt7 from '../assets/tshirt7.webp'
+
 const somervilleColors = {
-    images: [capbrownnet, capnetblue],
-    names: ['brown', 'blue'],
+    images: [capgreen, cappurple],
+    names: ['Navy', 'Gun Metal'],
 }
 
 const aderdeenColors = {
-    images: [capred, capgreen, cappurple, capwhite],
-    names: ['red', 'green', 'purple', 'cream'],
+    images: [capred, capwhite, capbrownnet, capnetblue],
+    names: ['Sand', 'Red', 'Forest Green', 'Navy'],
 }
 
-const hoodieColors = {
-    images: [hoodblue, hoodbpurple, hoodbwhite],
-    names: ['blue', 'purple', 'cream'],
-}
-
+// ── Oakwood Collection ──
 const oakwoodColors = {
-    images: [shopbtop1, shopbtop2, shopbtop3],
-    names: ['black', 'purple', 'cream'],
+    images: [newtank3, newtank4, newtank5],
+    names: ['Black', 'Navy', 'Stone'],
 }
 
-const shirt4Colors = {
-    images: [shirt4, shirt4_1],
-    names: ['black', 'white'],
+const oakwoodSleeveColors = {
+    images: [ls6, ls7, ls8],
+    names: ['Black', 'Navy', 'Stone'],
 }
 
-const shirt6Colors = {
-    images: [shirt6, shirt6_1, shirt6_2],
-    names: ['navy', 'grey', 'olive'],
+// ── Cotton T-Shirts ──
+const athleisureImg = shirt6
+const galleryImg = shirt6_1
+const harvestImg = shirt7_1
+const radiusImg = shirt7
+
+// ── Performance T-Shirts ──
+const oxfordImg = shirt1
+
+const plazaColors = {
+    images: [tshirt8, tshirt9, tshirt10],
+    names: ['Brown', 'Baby blue', 'Cream'],
 }
 
-const shirt7Colors = {
-    images: [shirt7, shirt7_1, shirt7_2],
-    names: ['red', 'forest', 'charcoal'],
+const sportsGamesColors = {
+    images: [shirt3, shirt4, shirt5],
+    names: ['White', 'Forest Green', 'Wine'],
 }
 
-const shirt8Colors = {
-    images: [shirt8, shirt8_1, shirt8_2, shirt8_3],
-    names: ['navy', 'white', 'forest', 'cream'],
+const lansdowneColors = {
+    images: [tshirt4, tshirt5, tshirt6, tshirt7],
+    names: ['Cream', 'Blue', 'Dark grey', 'White'],
 }
 
 const colorMap = {
-    brown: '#8B7355',
-    blue: '#2563EB',
-    red: '#DC2626',
-    green: '#16A34A',
-    purple: '#7C3AED',
-    cream: '#F0DCC0',
-    black: '#111111',
-    white: '#F5F5F5',
-    navy: '#1E3A5F',
-    grey: '#808080',
-    olive: '#556B2F',
-    forest: '#228B22',
-    charcoal: '#36454F',
+    Navy: '#1e1e4c',
+    'Gun Metal': '#575757',
+    Sand: '#eae1c3',
+    Red: '#c11111',
+    'Forest Green': '#123005',
+    Black: '#000000',
+    Stone: '#E0D8C8',
+    Cream: '#efe8cd',
+    Blue: '#adc9f2',
+    'Dark grey': '#353535',
+    White: '#FFFFFF',
+    Brown: '#492e0f',
+    'Baby blue': '#63b0e1',
+    Wine: '#4c0e20',
 }
+
+const slugify = (text) => text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
 const ProductCard = ({ title, price, className, img, options }) => {
     const [colorIdx, setColorIdx] = useState(0)
     const currentImg = options?.images?.[colorIdx] || img
 
+    const passedState = {
+        img: img || options?.images?.[0],
+        title,
+        price,
+        options: options ? {
+            names: options.names,
+            images: options.images,
+            hexes: options.names.map(name => colorMap[name] || '#000')
+        } : null
+    }
+
     return (
         <div className={className}>
-            <div className='img-wrap'>
-                <img src={currentImg} alt={title} />
-            </div>
+            <Link to={`/products/${slugify(title)}`} state={passedState} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className='img-wrap'>
+                    <img src={currentImg} alt={title} />
+                </div>
+            </Link>
             <div className={`${className}-des`}>
-                <h3>{title}</h3>
-                <p>{price}</p>
+                <Link to={`/products/${slugify(title)}`} state={passedState} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <h3>{title}</h3>
+                    <p>{price}</p>
+                </Link>
                 {options && (
                     <div className='color-swatches'>
                         {options.names.map((name, i) => (
@@ -144,12 +175,14 @@ const Shop = () => {
                         title="Somerville 4-Panel Hat"
                         price="$65.00 USD"
                         className="shopright1"
+                        img={somervilleColors.images[0]}
                         options={somervilleColors}
                     />
                     <ProductCard
-                        title="Aderdeen 6-Panel Hat"
+                        title="Aberdeen 6-Panel Hat"
                         price="$65.00 USD"
                         className="shopleft1"
+                        img={aderdeenColors.images[0]}
                         options={aderdeenColors}
                     />
                 </div>
@@ -158,23 +191,25 @@ const Shop = () => {
             <div className='shop-bottom'>
                 <div className='shop-bottom-left'>
                     <ProductCard
-                        title="Oakwood TankTop"
-                        price="$150.00 USD"
+                        title="Oakwood Tank Top"
+                        price="$65.00 USD"
                         className="shopright1"
+                        img={oakwoodColors.images[0]}
                         options={oakwoodColors}
                     />
                     <ProductCard
-                        title="Oakwood Longsleeves"
-                        price="$120.00 USD"
+                        title="Oakwood Longsleeve"
+                        price="$95.00 USD"
                         className="shopleft1"
-                        options={hoodieColors}
+                        img={oakwoodSleeveColors.images[0]}
+                        options={oakwoodSleeveColors}
                     />
                 </div>
                 <div className='shop-bottom-right'>
                     <img src={shopbottombig} alt="" />
                     <div className='des'>
                         <div className='des-right'>
-                            <h1>APPAREL</h1>
+                            <h1>THE OAKWOOD COLLECTION</h1>
                         </div>
                         <div className='des-right'>
                             <h3>THE OAKWOOD COLLECTION</h3>
@@ -190,52 +225,61 @@ const Shop = () => {
                     <h1>Cotton T-shirts</h1>
                 </div>
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Athleisure T-Shirt"
+                    price="$75.00 USD"
                     className="shopgrid"
-                    img={shirt1}
+                    img={athleisureImg}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Gallery T-Shirt"
+                    price="$75.00 USD"
                     className="shopgrid"
-                    img={shirt2}
+                    img={galleryImg}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Harvest T-Shirt"
+                    price="$75.00 USD"
                     className="shopgrid"
-                    img={shirt3}
+                    img={harvestImg}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Radius T-Shirt"
+                    price="$75.00 USD"
                     className="shopgrid"
-                    options={shirt4Colors}
+                    img={radiusImg}
+                />
+            </div>
+
+            <div className='shop-grid'>
+                <div className='shopgrid-heading'>
+                    <h1>Performance T-Shirts</h1>
+                </div>
+                <ProductCard
+                    title="Oxford Cropped T-Shirt"
+                    price="$105.00 USD"
+                    className="shopgrid"
+                    img={oxfordImg}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Plaza Ringer T-Shirt"
+                    price="$110.00 USD"
                     className="shopgrid"
-                    img={shirt5}
+                    img={plazaColors.images[0]}
+                    options={plazaColors}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Sports & Games Cropped Ringer T-Shirt"
+                    price="$110.00 USD"
                     className="shopgrid"
-                    options={shirt6Colors}
+                    img={sportsGamesColors.images[0]}
+                    options={sportsGamesColors}
                 />
                 <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
+                    title="Lansdowne T-Shirt"
+                    price="$105.00 USD"
                     className="shopgrid"
-                    options={shirt7Colors}
-                />
-                <ProductCard
-                    title="Tee"
-                    price="$85.00 USD"
-                    className="shopgrid"
-                    options={shirt8Colors}
+                    img={lansdowneColors.images[0]}
+                    options={lansdowneColors}
                 />
             </div>
 
