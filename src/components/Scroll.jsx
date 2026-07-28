@@ -5,6 +5,10 @@ export default function Scroll({ children }) {
     const ref = useRef(null)
 
     useEffect(() => {
+        // Only initialize smooth scrolling on desktop devices
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) return;
+
         const lenis = new Lenis({
             element: document.documentElement,
             duration: 1.8,
@@ -12,7 +16,7 @@ export default function Scroll({ children }) {
             smooth: true,
             smoothWheel: true,
             wheelMultiplier: 1,
-            touchMultiplier: 2,
+            syncTouch: false,
         })
 
         lenis.on('scroll', () => { })
